@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGA - Inicio de Sesión</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contenedor {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            background: #e9ecef;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            color: #6c757d;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        .subtitulo {
+            color: #6c757d;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .grupo-input {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.25);
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .mensaje {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="logo">
+            SIGA<br>
+            <span style="font-size: 10px;">Sistema de Gestión de Activos</span>
+        </div>
+        
+        <h1>Bienvenido al SIGA</h1>
+        <p class="subtitulo">Sistema de Información para la Gestión de Activos</p>
+        
+        <form>
+            <div class="grupo-input">
+                <label for="usuario">Usuario</label>
+                <input type="text" id="usuario" placeholder="Ingrese su usuario">
+            </div>
+            
+            <div class="grupo-input">
+                <label for="contrasena">Contraseña</label>
+                <input type="password" id="contrasena" placeholder="Ingrese su contraseña">
+            </div>
+            
+            <div class="grupo-input">
+                <label for="rol">Rol</label>
+                <select id="rol">
+                    <option value="">Seleccione su rol</option>
+                    <option value="gerente">Gerente</option>
+                    <option value="administrador">Administrador</option>
+                    <option value="tecnico">Técnico</option>
+                    <option value="operario">Operario</option>
+                </select>
+            </div>
+            
+            <button type="button" onclick="iniciarSesion()">Iniciar Sesión</button>
+        </form>
+        
+        <p class="mensaje">© 2026 SIGA - Todos los derechos reservados</p>
+    </div>
+
+    <script>
+        function iniciarSesion() {
+            const usuario = document.getElementById('usuario').value;
+            const contrasena = document.getElementById('contrasena').value;
+            const rol = document.getElementById('rol').value;
+            
+            if (!usuario || !contrasena || !rol) {
+                alert('Por favor complete todos los campos');
+                return;
+            }
+            
+            window.location.href = '/principal';
+        }
+    </script>
+</body>
+</html>

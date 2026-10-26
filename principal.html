@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGA - Página Principal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .barra-superior {
+            background: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .barra-superior h1 {
+            font-size: 22px;
+            color: #2c3e50;
+        }
+
+        .btn-cerrar {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .contenido {
+            padding: 40px;
+            text-align: center;
+            color: white;
+        }
+
+        .contenido h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .contenido p {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+
+        .tarjetas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .tarjeta {
+            background: white;
+            color: #2c3e50;
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-5px);
+        }
+
+        .tarjeta h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .tarjeta p {
+            font-size: 14px;
+            color: #6c757d;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="barra-superior">
+        <h1>📊 SIGA - Sistema de Información para la Gestión de Activos</h1>
+        <button class="btn-cerrar" onclick="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+
+    <div class="contenido">
+        <h2>¡Bienvenido al Sistema!</h2>
+        <p>Seleccione una opción para comenzar</p>
+
+        <div class="tarjetas">
+            <div class="tarjeta">
+                <h3>📦 Gestión de Activos</h3>
+                <p>Registrar y administrar los activos de la empresa</p>
+            </div>
+            <div class="tarjeta">
+                <h3>👤 Gestión de Usuarios</h3>
+                <p>Administrar el personal del sistema</p>
+            </div>
+            <div class="tarjeta">
+                <h3>📊 Reportes</h3>
+                <p>Generar reportes y consultas</p>
+            </div>
+            <div class="tarjeta">
+                <h3>🔧 Mantenimiento</h3>
+                <p>Historial y órdenes de mantenimiento</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function cerrarSesion() {
+            window.location.href = '/inicio.html';
+        }
+    </script>
+</body>
+</html>
